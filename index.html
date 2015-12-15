@@ -1,11 +1,65 @@
 <!doctype html>
-<script src="code/game-1.js"></script>
+<head>
+<script src="code/game.js"></script>
 <script src="code/game_levels.js"></script>
-
+<script src="code/canvasdisplay.js"></script>
 <link rel="stylesheet" href="css/game.css">
+<title> Help Moonwalk the Giraffe! </title></head>
+
+
 
 <body>
+<div id="giraffe"> </div>
+
   <script>
-    runGame(GAME_LEVELS, DOMDisplay);
+    //runGame(GAME_LEVELS, CanvasDisplay);
+    init();
+
+    //runGame(GAME_LEVELS, DOMDisplay);
+    //runGame(GAME_LEVELS, CanvasDisplay);
+
+function init(){
+var canvas = document.createElement("canvas");
+var context = canvas.getContext('2d');
+canvas.width = 600;
+canvas.height = 450;
+/*window.addEventListener('resize', resizeCanvas, false);
+window.addEventListener('orientationchange', resizeCanvas, false);
+	resizeCanvas();*/
+
+parent = document.getElementById("giraffe");
+parent.appendChild(canvas);
+
+context.fillStyle = "DeepSkyBlue"
+context.fillRect(0, 0, canvas.width, canvas.height);
+context.fillStyle = 'black';
+context.font = 'bold 1em sans-serif';
+context.textAlign = 'center';
+context.fillText("Help the Moonwalk the giraffe collect the leaves while avoiding the tar pits.", canvas.width/2,canvas.height/2); 
+context.textAlign = 'center';
+context.fillText("Click anywhere to begin the game!", canvas.width/1.8, canvas.height/1.8);
+
+canvas.onclick = function(event){
+runGame(GAME_LEVELS, CanvasDisplay);
+canvas.remove();
+};
+}
+
+
+function results(){
+	var picture = document.createElement('img');
+	picture.className = 'results';
+	var source = document.getElementById('giraffe');
+	var description;
+	picture.src = 'patrick.gif';
+	source.innerHTML += '<h1>You Win!</h1>';
+	source.appendChild(picture);
+	source.innerHTML += '<br/></br><a href="javascript:history.go(0)">Replay?</a>';
+}
+/*function resizeCanvas (){
+	canvas.width = window.innerWidth - 20;
+	canvas.height = window.innerHeight - 20;
+	}
+*/
   </script>
 </body>

@@ -1,16 +1,21 @@
-.background    { background-image: url("http://globe-views.com/dcim/dreams/sky/sky-05.jpg");
+body {
+	background: url("../img/giraffeback.jpg");
+}
+
+
+.background    { background: url("../img/sky.bmp");
                  table-layout: fixed;
                  border-spacing: 0;   }
 .background td { padding: 0;          }
-.lava          { background: rgb(0, 0, 0); }
+.lava          { background-image: url("http://www.areigroupe.com/content_images/portf1.jpg"); }
 .wall          { background-image: url("http://gallery.yopriceville.com/var/albums/Backgrounds/Background_Beach_Sand.jpg?m=1432123262"); }
 .trunk		   { background: rgb(102, 51, 0);   }
 .leaves		   { background: rgb(76, 153, 0);   }
-.villain	   {background: url("../images/lion.gif");  }
+.villain	   {background: url("../img/lion.gif");  }
 
 .actor  { position: absolute;  }
-.coin   { background: url("../images/leaf.png"); }
-.player { background: url("../images/giraffe.gif"); }
+.coin   { background: url("../img/leaf.png"); }
+.player { background: url("../img/giraffe.gif"); }
 
 
 .game {
